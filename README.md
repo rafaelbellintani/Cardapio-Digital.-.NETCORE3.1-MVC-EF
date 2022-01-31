@@ -22,3 +22,5 @@ string SenhaDoBanco="SENHADOUSUARIO";
 EXECUCAO
 
 Basta compilar e executar a aplicação.
+
+Adiciona produtos, edita, deleta, e mostra os produtos para o usuário final.
