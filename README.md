@@ -8,7 +8,7 @@ Feito do Visual Studio 2019
 INSTALAÇÃO
 
 Instale o .NET CORE 3.1
-Instale e execute o banco de dados MARIADB
+Instale e execute o banco de dados MARIADB 10.5
 Execute o arquivo cdigital.sql para adicionar a database e as tables
 
 Execute o arquivo SLN para abrir com o visual studio
