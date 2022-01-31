@@ -1,0 +1,41 @@
+﻿@model CDigital.Models.Produto
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<header>
+    <nav class="painelAdmin">
+        <h3>Cardápio Digital ADMIN - Novo Produto</h3>
+    </nav>
+</header>
+
+<div class="dataForm" asp-action="Criar">
+    <form class="formProducts" id="formNewProducts" name="formNewProducts" method="POST">
+        <div>
+            <label asp-for="Name">Nome:</label>
+            <input asp-for="Name" type="text" name="name" id="name">
+            <label asp-for="Price">Preço:</label>
+            <input asp-for="Price" type="text" name="price" id="price"><br><br>
+        </div>
+        <label asp-for="Description">Descrição:</label><br>
+        <textarea asp-for="Description" name="description" id="description"></textarea><br>
+        <button type="submit" class="btn btn-primary" form="formNewProducts">Cadastrar</button>
+    </form>
+</div>
+
+
+<div class="buttonBack">
+    <a class="btn btn-danger" asp-action="Index">Voltar</a>
+</div>
+
+<script>
+    $(document).on('input','#price',function(event) {
+                if (this.value.length === 1) {this.value = '0'+this.value;}
+                this.value = parseFloat(this.value.replace(/[^\d]/g,'').replace(/(\d\d?)$/,'.$1')).toFixed(2);
+            });
+</script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

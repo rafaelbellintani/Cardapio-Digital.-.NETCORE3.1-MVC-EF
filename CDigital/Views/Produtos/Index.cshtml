@@ -1,0 +1,46 @@
+﻿@model IEnumerable<CDigital.Models.Produto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<header>
+    <nav class="painelAdmin">
+        <h3>Cardápio Digital - Painel ADMIN</h3>
+    </nav>
+</header>
+
+<div class="buttonAdd">
+    <a class="btn btn-danger" asp-action="Criar">Novo +</a><a class="btn btn-primary" asp-controller="Home">Voltar ao Cardápio</a>
+</div>
+
+<div class="tableContainer">
+    <table class="table produtos">
+        <thead>
+            <tr>
+                <th scope="col">Imagem</th>
+                <th scope="col">Informações</th>
+                <th scope="col">Opções</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    Imagem
+                </td>
+                <td class="productData">
+                    <p class="productName">@Html.DisplayFor(modelItem => item.Name)</p>
+                    <p class="productDescription">@Html.DisplayFor(modelItem => item.Description)</p>
+                    <p class="productPrice">R$ @Html.DisplayFor(modelItem => item.Price)</p>
+                    <input id="productId" type="hidden" value="xx">
+                </td>
+                <td class="options">
+                    <a type="button" class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                    <a type="button" class="btn btn-danger"  asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+

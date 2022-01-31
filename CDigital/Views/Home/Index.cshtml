@@ -1,0 +1,37 @@
+﻿@model IEnumerable<CDigital.Models.Produto>
+
+        @{
+            ViewData["Title"] = "Cardápio Digital";
+        }
+
+        <header class="heroImage">
+            <img src="/img/restaurante1.jpg" />
+        </header>
+
+        <h1 class="title">Cardápio Digital</h1>
+
+        <div class="container">
+
+            <table class="table produtos">
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="productRow">
+                                <p class="productName">@item.Name</p>
+                                <p class="productDescription">@item.Description</p>
+                                <p class="productPrice">R$ @item.Price</p>
+                            </td>
+                            <td class="imageProduct">
+                                Imagem
+                            </td>
+                        </tr>
+                    }
+            </table>
+
+
+
+        </div>
+
+        <footer class="footer">
+            <a class="btn btn-danger" asp-area="" asp-controller="Sistema">Painel ADMIN</a>
+        </footer>
