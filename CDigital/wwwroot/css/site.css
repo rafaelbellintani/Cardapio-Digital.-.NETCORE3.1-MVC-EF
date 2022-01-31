@@ -17,7 +17,6 @@
 .footer {
     width: 100%;
     bottom: 0;
-    position: fixed;
     background-color: black;
     height: 60px;
 }
